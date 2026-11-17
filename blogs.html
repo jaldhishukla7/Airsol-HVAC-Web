@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIRSOL HVAC - Blogs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #0056b3;
+      --secondary: #333;
+      --accent: #ff6b00;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1555244162-803834f70033');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Blog Grid */
+    .blogs {
+      padding: 60px 0;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      background: white;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .blog-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .blog-card:hover .blog-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .blog-content h3 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+      color: var(--secondary);
+    }
+
+    .excerpt {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .read-more i {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .read-more:hover i {
+      transform: translateX(3px);
+    }
+
+    .date {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 12px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>Latest Articles & Insights</h1>
+      <p>Explore industry trends, tips, and expert advice</p>
+    </div>
+  </header>
+
+  <!-- Blog Grid -->
+  <section class="blogs">
+    <div class="container">
+      <div class="blog-grid">
+        <!-- Blog 1 -->
+        <div class="blog-card">
+          <div class="blog-image">
+            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e"
+              alt="Commercial Kitchen Exhaust System">
+          </div>
+          <div class="blog-content">
+            <span class="category-tag">HVAC Systems</span>
+            <h3>The Importance of a Reliable Commercial Kitchen Exhaust System</h3>
+            <p class="excerpt">Learn how a well-designed exhaust system enhances safety, efficiency, and compliance in
+              commercial kitchens.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <span class="date">April 8, 2025</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Need Professional HVAC Solutions?</h2>
+      <p>Contact our experts for customized commercial kitchen exhaust systems.</p>
+      <a href="#" class="cta-button">Get a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 AIRSOL HVAC INDUSTRY. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Blog card hover effect enhancement
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  blogCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+    });
+  });
+</script>

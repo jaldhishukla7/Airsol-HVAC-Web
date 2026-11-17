@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Airsol Pvt Ltd</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/distaos.css">
+    <link href="css/menu.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favikon" type="image/x-icon">
+    <link rel="stylesheet" href="/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Bootstrap JS (requires Popper.js and jQuery) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<style>
+    .slider-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        height: 200px;
+    }
+
+    .slider {
+        white-space: nowrap;
+        animation: slider 30s linear infinite;
+        animation-delay: 0s;
+    }
+
+    .slide {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        line-height: 200px;
+    }
+
+    /* Inquiry Icon Button */
+    .chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 1000;
+    }
+
+    /* Inquiry Icon Button */
+    .chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        user-select: none;
+    }
+
+    /* Chatbot container */
+    .chatbot-container {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 320px;
+        max-height: 400px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        /* hidden initially */
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 1001;
+    }
+
+    /* Chatbot header */
+    .chatbot-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+    }
+
+    /* Chatbot messages */
+    .chatbot-messages {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+        max-height: 300px;
+    }
+
+    /* Chatbot message styles */
+    .message {
+        margin-bottom: 15px;
+        clear: both;
+    }
+
+    .message.user {
+        text-align: right;
+    }
+
+    .message.user .text {
+        background-color: #007bff;
+        color: white;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 10px;
+        word-wrap: break-word;
+    }
+
+    .message.bot .text {
+        background-color: #f1f1f1;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+
+    /* Chatbot input */
+    .chatbot-input {
+        padding: 10px;
+        background-color: #f9f9f9;
+        display: none;
+        justify-content: space-between;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .chatbot-input select {
+        flex-grow: 1;
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .chatbot-input button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .chatbot-input button:hover {
+        background-color: #218838;
+    }
+
+    .chatbot-icon i {
+        cursor: pointer;
+    }
+
+    @keyframes slider {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="topbaar d-lg-flex d-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-white text-lg-end d-flex align-items-center justify-content-lg-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <style>
+                                svg {
+                                    fill: #ffffff
+                                }
+                            </style>
+                            <path
+                                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
+                        </svg> &nbsp; 12,Maruti Estate, Opp. Hindustan Marbel GIDC Odhav,
+                        Ahmedabad
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container"> <a class="navbar-brand" href="index.html"> <img src="/images/airsol.logo.jpg">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-content">
+                    <div class="hamburger-toggle">
+                        <div class="hamburger"> <span></span> <span></span> <span></span> </div>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-content">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="width: 75%;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html" target="_blank">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#aboutus" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside"> About Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/about-us.html" target="_blank">About Company</a>
+                                </li>
+                                <li><a class="dropdown-item" href=""></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">Products</a>
+                            <ul class="dropdown-menu shadow">
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Air Conditioning System</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Air-Handling System (AHU)</a></li>
+                                        <li><a class="dropdown-item" href="">VRV/VRF System</a></li>
+                                        <li><a class="dropdown-item" href="">Ductable AC</a></li>
+                                        <li><a class="dropdown-item" href="">Cassette AC</a></li>
+                                        <li><a class="dropdown-item" href="">Central AC System</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Ducting</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Round Duct</a></li>
+                                        <li><a class="dropdown-item" href="">Rectangle Duct</a></li>
+                                        <li><a class="dropdown-item" href="">Capsule Duct</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Commercial Kitchen Exhaust System</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Hood Commercial Chimney</a></li>
+                                        <li><a class="dropdown-item" href="">Dry Scrubber</a></li>
+                                        <li><a class="dropdown-item" href="">Wet Scrubber</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Ventilation System</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Industrial Ventilation System</a></li>
+                                        <li><a class="dropdown-item" href="">Commercial/Residential/Mall Ventilation</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="">Building Underground Parking
+                                                Ventilation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Industrial Blower Fan</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Centrifugal Fan</a></li>
+                                        <li><a class="dropdown-item" href="">Tube Axial fan</a></li>
+                                        <li><a class="dropdown-item" href="">Low Pressure Fan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Chiller Plant</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Ductable Air Cooler</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Clean Room</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Operation Theatre Room</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Fire Safety</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Smoke Detector System</a></li>
+                                        <li><a class="dropdown-item" href="">Heat Detector System</a></li>
+                                        <li><a class="dropdown-item" href="">Fire Hydrant System</a></li>
+                                        <li><a class="dropdown-item" href="">Fire Safety Equipment & Installation</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="">Fire Sprinklers</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropend">
+                                    <a href="" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">HVAC Accessories</a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="">Air Diffuser</a></li>
+                                        <li><a class="dropdown-item" href="">Air Filters</a></li>
+                                        <li><a class="dropdown-item" href="">Air Grills</a></li>
+                                        <li><a class="dropdown-item" href="">Air Dampers</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recentwork" target="_self">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blogs.html" target="_self">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact-us.html" target="_blank">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-lg-flex align-items-center">
+                    <div class="d-lg-flex align-items-center callus"> <span><a href="#"><img src="/images/phone.png"
+                                    width="30">&nbsp; (+91) 81418 48212 &nbsp; (+91) 79905
+                                44540
+                            </a></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+    <section class="banner pt-4 pb-lg-0 pb-5" data-aos="fade-up">
+        <div class="container">
+            <div class="banner-home-owl owl-carousel owl-theme">
+                <div class="item">
+                    <div class="row align-items-center">
+                        <!-- <div class="col-lg-7 order-lg-2"><img src="/images/img.jpeg" class="img-fluid"></div> -->
+                        <div class="col-lg-7 order-lg-2"><img src="/images/SlideShowImg1.jpeg" class="img-fluid"></div>
+                        <div class="col-lg-5 order-lg-1">
+                            <div class="subtitle text-uppercase d-flex align-items-center pt-lg-0 pt-4">Your HVAC
+                                Partner for Life <span class="subtitle-line"></span></div>
+                            <div class="title pb-4 pt-3">Commercial Exhaust Kitchen</div>
+                            <p>Commercial Exhaust Kitchen systems ensure clean, safe air in professional kitchens by
+                                removing smoke, grease, and odors efficiently, promoting hygiene and compliance with
+                                safety standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="row align-items-center">
+                        <!-- <div class="col-lg-7 order-lg-2"><img src="/images/total-hvac.jpg" class="img-fluid"> -->
+                        <div class="col-lg-7 order-lg-2"><img src="/images/SlideShowImg2.jpeg" class="img-fluid">
+                        </div>
+                        <div class="col-lg-5 order-lg-1">
+                            <div class="subtitle text-uppercase d-flex align-items-center pt-lg-0 pt-4">Your Comfort,
+                                Our Priority <span class="subtitle-line"></span></div>
+                            <div class="title pb-4 pt-3">Your All-in-One HVAC Solution</div>
+                            <p>We've taken HVAC to the next level with specialized applications that cater to our
+                                clients' specific needs. Our comprehensive HVAC services span across Pharmaceuticals,
+                                Textiles, Chemical Industries, Hospitals, as well as Fruit, Vegetables, and Food
+                                Processing sectors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="service-home">
+        <div class="container">
+            <div class="box-cont">
+                <div class="row g-3">
+                    <div class="col-lg-3 d-flex col-6 aos-init aos-animate" data-aos="fade-up">
+                        <div class="banner-box "> <i class="fas fa-map-marker-alt fa-3" aria-hidden="true"></i>
+                            <div class="pt-2"> Find Location</div>
+                        </div>
+                        <div class="banner-box-right"> <a href="https://maps.app.goo.gl/pK5wBCJXmsS5oNzA9"
+                                target="_blank"><span class="fas fa-arrow-right"></span> </a> </div>
+                    </div>
+                    <div class="col-lg-3 d-flex col-6" data-aos="fade-up">
+                        <div class="banner-box "> <i class="fa fa-volume-control-phone text-white fa-3"
+                                aria-hidden="true"></i>
+                            <div class="pt-2" href="/contact-us.html"> Contact Us</div>
+                        </div>
+                        <div class="banner-box-right"> <a href="/contact-us.html" target="_blank"><span
+                                    class="fas fa-arrow-right"></span> </a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4">
+                <div class="col-lg-6">
+                    <div class="subtitle text-uppercase d-flex align-items-center" data-aos="fade-up">Our Company <span
+                            class="subtitle-line"></span></div>
+                    <div class="title pb-1 pt-2" data-aos="fade-up">What We Can Do</div>
+                    <p class="text-primary mb-0" data-aos="fade-up"> We've innovated specialized solutions crafted to
+                        meet our clients' precise demands.</p>
+                </div>
+            </div>
+            <div class="service-home-owl owl-carousel owl-theme" data-aos="fade-up">
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/ductable4.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Ductable AC</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/cassette-ac.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Cassete AC</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Air-handling.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Air Handling Sysytem</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Exhaust-Air-System.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Exhaust Air System</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Centrifugal-blower-fan.jpg" class="img-fluid"
+                                alt="img" style="height: 220px;"> </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Centrifugal Blower Fan</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/ducting-system_1.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Ducting System</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Grills.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Grills And Diffusers</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Thermal-insulation.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Thermal Insulation</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Under-Deck-Insulation.jpg" class="img-fluid"
+                                alt="img" style="height: 220px;"> </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Under Deck Insulation</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/Kitchen-Exhaust.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Kitchen Exhaust System</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ablog">
+                        <div class="ablog__img"> <img src="/images/FILTERS.jpg" class="img-fluid" alt="img"
+                                style="height: 220px;">
+                        </div>
+                        <div class="ablog__text ablog__text--service">
+                            <h4 class="ablog__text--title"><a href="#">Air Filter</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about pt-5 pb-5 mb-lg-5">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-5 ps-lg-0"> <img src="/images/takecareprob.jpeg"
+                        class="img-fluid aos-init aos-animate" data-aos="fade-up"></div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="subtitle text-uppercase d-flex align-items-center pt-lg-0 pt-4 aos-init aos-animate"
+                                data-aos="fade-up">About <span class="subtitle-line"></span></div>
+                            <div class="title pb-1 pt-2 aos-init aos-animate" data-aos="fade-up">Expert solutions<br>
+                                for all your HVAC needs.</div>
+                            <p data-aos="fade-up" class="pt-3 aos-init aos-animate">We not only provide services but
+                                also offer our expertise through surveys, studies, reviews, and reports. Our HVAC system
+                                designs prioritize energy efficiency, cost-effectiveness, and environmental
+                                friendliness. With our unwavering commitment to quality, we provide a reliable way to
+                                budget your project cost effectively.
+                            </p>
+                        </div>
+                        <div class="col-lg-5 pe-lg-0 about-right"> <img src="/images/airductclean.jpeg"
+                                class="img-fluid aos-init aos-animate" data-aos="fade-up"></div>
+                    </div>
+                    <div class="row g-4 pt-5">
+                        <div class="col-lg-5 col-6 aos-init" data-aos="fade-up">
+                            <div class="counter d-flex align-items-end position-relative">
+                                <div class="counter-no">6+</div>
+                                <div class="counter-title text-primary">Years of<br>
+                                    Experience</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-6 aos-init" data-aos="fade-up">
+                            <div class="counter d-flex align-items-end position-relative">
+                                <div class="counter-no">50+</div>
+                                <div class="counter-title text-primary">Skilled<br>
+                                    Technicians</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5" id="recentwork">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 m-auto">
+                    <div class="title pb-1 pt-2 text-center" data-aos="fade-up">Our Recent Project</div>
+                </div>
+            </div>
+            <hr />
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide" style="background-image: url('/images/recentwork1.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork2.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork3.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork4.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork5.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork6.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork7.jpg');"></div>
+                    <div class="slide" style="background-image: url('/images/recentwork8.jpg');"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="people-trust py-5 my-lg-5">
+        <div class="container">
+            <div class="subtitle text-uppercase text-center" data-aos="fade-up">Our Company</div>
+            <div class="title pb-5 pt-2 text-center" data-aos="fade-up">Why We Are Best</div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="fa fa-inr me-3"></span>
+                                Competitive<br> Pricing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 border-start border-end">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="fas fa-users"></span>
+                                Young, Experienced <br>And Expert Team</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="far fa-lightbulb"></span>
+                                Customized & Budget<br> Friendly Ideas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-lg-4 pt-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span
+                                    class="fas fa-clipboard-check"></span>
+                                Personalized<br> Services</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pt-lg-4 border-start border-end">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span
+                                    class="fas fa-shopping-cart"></span>
+                                Cost-effective <br>Corporate Offers </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 pt-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="fas fa-envelope"></span>
+                                Life-enhancing <br>Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top">
+
+
+                <div class="col-lg-4 pt-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="fas fa-eraser"></span>
+                                One Stop <br>Solution</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pt-lg-4 border-start border-end">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span class="fas fa-user-tag"></span>
+                                Full
+                                Price Transparency <br>No Hidden Cost</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pt-lg-4">
+                    <div class="people-trust-box" data-aos="fade-up">
+                        <div class="d-flex align-items-center justify-content-between pb-3">
+                            <div class="d-flex people-trust-title text-primary"> <span
+                                    class="fas fa-fast-forward"></span></span> 5
+                                Years <br>Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="mobileappbanner d-flex align-items-end">
+            <div class="container-fluid">
+                <div class="row justify-content-lg-end">
+                    <div class="text-end col-lg-6 pe-lg-5">
+                        <h1 class="text-white" data-aos="fade-up">Your All-in One <br> professional <span
+                                class="text-warning">HVAC Solution.</span></h1>
+                        <p class="pb-0 mb-0 text-white" data-aos="fade-up"> Experience excellence in HVAC maintenance
+                            with All-in-One Home Professionals. We assure efficient, year-round comfort for your home
+                            while reducing energy costs.</p>
+                        <h4 class="text-white pt-3" data-aos="fade-up">Call Us for Further Inquiries</h4>
+                        <h5 data-aos="fade-up" class="text-white"> (+91) 81418 48212 &nbsp; (+91) 79905
+                            44540 </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-5  service-partners">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 m-auto">
+                    <div class="title pb-1 pt-2 text-center" data-aos="fade-up">Our Specialties</div>
+                </div>
+            </div>
+            <hr />
+            <div class="row g-4">
+                <div class="col-lg-3" data-aos="fade-up">
+                    <div class="industry-box" id="healthcare-box"
+                        style="background-image: url('./images/healthcare.jpg');">
+                        <li class="nav-item dropdown"> <label class="dropdown-toggle" href="#healthcare"
+                                data-bs-toggle="dropdown" data-bs-auto-close="outside"> Health Care</label>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Namo'stu Te Hospitals</a></li>
+                                <li><a class="dropdown-item" href="#">Apollo CVHF Heart Institute</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up">
+                    <div class="industry-box">
+                        <li class="nav-item dropdown"> <label class="dropdown-toggle" href="#industry"
+                                data-bs-toggle="dropdown" data-bs-auto-close="outside"> Corporate
+                                Industries</label>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Club Mahindra</a></li>
+                                <li><a class="dropdown-item" href="#">Indian Oil</a></li>
+                                <li><a class="dropdown-item" href="#">Adani Shantigram</a></li>
+                                <li><a class="dropdown-item" href="#">AIA Engineering</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up">
+                    <div class="industry-box">
+                        <li class="nav-item dropdown"> <label class="dropdown-toggle" href="#hotelsresort"
+                                data-bs-toggle="dropdown" data-bs-auto-close="outside"> Hotels & Resort</label>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Niro By Nini's</a></li>
+                                <li><a class="dropdown-item" href="#">Hotel Dakshinayan</a></li>
+                                <li><a class="dropdown-item" href="#">Hotel Saffron</a></li>
+                                <li><a class="dropdown-item" href="#">The Biryani Legend</a></li>
+                                <li><a class="dropdown-item" href="#">Kensville Golf and Country Club</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-lg-3" data-aos="fade-up">
+                    <div class="industry-box">
+                        <label href="#healthcare"> & Many More...</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+    <section class="we-wrok">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 ps-lg-5 col-sm-12 p-5"> <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9477033887633!2d72.64408087485096!3d23.025692316212574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e87533ed6af2b%3A0xae93677830c59e51!2sAirsol%20HVAC%20industry!5e0!3m2!1sen!2sin!4v1696755166631!5m2!1sen!2sin"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-lg-5 ps-lg-5 we-wrok-right">
+                    <div class="title pb-1 pt-2 " data-aos="fade-up">Let's Get Connected</div>
+                    <p data-aos="fade-up" class="pt-3  ">If you have a question about an Airsol HVAC heating or cooling
+                        system, or you’re already a customer and would like support, give us a call.</p>
+                    <h6 data-aos="fade-up" class="text-primary text-uppercase">Mon to Sat 09:00 AM to 06:00 PM</h6>
+                    <h6 data-aos="fade-up" class="text-primary text-uppercase">Sunday Closed</h6>
+                    <h5 data-aos="fade-up" class="text-primary text-uppercase"> (+91) 81418 48212 &nbsp; (+91) 79905
+                        44540 </h5>
+                    <a href="/contact-us.html" data-aos="fade-up" class="btn"> Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbotIcon" title="Chat with us!">
+        <i class="fa fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            Chillbot
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <!-- Messages injected here -->
+        </div>
+
+        <div class="chatbot-input d-flex justify-content-between align-items-center p-2" style="display: flex;">
+            <select id="serviceSelect" class="form-select me-2">
+                <option value="" disabled selected>Select a service</option>
+                <option value="AC Maintenance">AC Maintenance</option>
+                <option value="HVAC Installation">HVAC Installation</option>
+                <option value="Ventilation Cleaning">Ventilation Cleaning</option>
+                <option value="Kitchen Ventilation System">Kitchen Ventilation System</option>
+            </select>
+            <button id="sendInquiry" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+
+    <!-- footer area start here -->
+    <footer class="pt-95">
+        <section class="footer-area pt-110 pb-85">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="footer__widget "> <img src="/images/airsol.logo.jpg" class="pb-4 w-50 img-fluid"
+                                style="border-radius: 5px; mix-blend-mode: multiply;">
+                            <p>We're a dedicated HVAC solutions provider known for delivering top-quality services and
+                                proactive client support. Our goal is to give our clients a competitive edge and enhance
+                                the value of their businesses. </p>
+
+                            <ul class="widget__contact">
+
+                                <li><span class="fas fa-mobile-alt"></span> <a href="tel:+918141848212"> (+91) 81418
+                                        48212
+                                        &nbsp; (+91) 79905 44540 </a></li>
+
+                                <li>
+                                    <span class="ti-email me-2"></span>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=airsolhvac@gmail.com&su=Service%20Details%20Request&body=Could%20you%20please%20provide%20more%20details%20on%20your%20ventilation%20cleaning%20and%20kitchen%20ventilation%20systems%3F"
+                                        target="_blank" rel="noopener noreferrer">airsolhvac@gmail.com</a>
+                                </li>
+
+                                <li class="pb-0"><span class="fas fa-map-marker-alt me-2"></span> 12,Maruti Estate, Opp.
+                                    Hindustan Marbel GIDC Odhav,
+                                    Ahmedabad, Gujarat</li>
+
+                            </ul>
+
+                            <style type="text/css">
+                                .socallink a {
+                                    font-size: 17px;
+                                    margin-right: 10px
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 ps-lg-5">
+                        <div class="footer__widget">
+                            <h4 class="footer__widget--title pb-4">Services</h4>
+                            <ul class="widget__links">
+                                <li><a href="#">Air Conditioning System</a></li>
+                                <li><a href="#">Ducting</a></li>
+                                <li><a href="#">Commercial Kitchen Exhaust System</a></li>
+                                <li><a href="#">Ventilation System</a></li>
+                                <li><a href="#">Industrial Blower Fan</a></li>
+                                <li><a href="#">Chiller Plant</a></li>
+                                <li><a href="#">Clean Room</a></li>
+                                <li><a href="#">HVAC Accessories</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer__widget">
+                            <h4 class="footer__widget--title pb-4">Quick Links</h4>
+                            <ul class="widget__links">
+                                <li><a href="index.html">Airsol HVAC Pvt Ltd</a></li>
+                                <li><a href="/about-us.html">About Company</a></li>
+                                <li><a href="/contact-us.html">Contact Us </a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="copyright-area copyright-border">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="copyright__text text-center"> <span>Copyright © 2023 <a href="#">Airsol HVAC Pvt
+                                    Ltd</a>. All Rights Reserved.</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/theme.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.css">
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            // Close the dropdown menu on click
+            $('.dropdown-item').on('click', function () {
+                $('.dropdown-menu.show').removeClass('show');
+            });
+
+            // Close the dropdown menu on scroll
+            $(window).on('scroll', function () {
+                $('.dropdown-menu.show').removeClass('show');
+            });
+        });
+
+        $('.dropdown-toggle').click(function (e) {
+            if ($(document).width() > 768) {
+                e.preventDefault();
+
+                var url = $(this).attr('href');
+
+                if (url !== '#') {
+                    window.location.href = url;
+                }
+            }
+        });
+
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+
+        jQuery('.featured-owl').owlCarousel({
+            center: true,
+            items: 1,
+            loop: true,
+            margin: 0,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+
+        jQuery('.relted-owl').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+
+        jQuery('.service-home-owl').owlCarousel({
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            loop: true,
+            margin: 15,
+            dots: false,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            }
+
+        });
+
+        jQuery('.banner-home-owl').owlCarousel({
+            items: 1,
+            autoplay: true,
+            loop: true,
+            margin: 15,
+            dots: false,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+
+        jQuery('.partners-home-owl').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 30,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 6
+                }
+            }
+
+        });
+
+        document.addEventListener('click', function (e) {
+            // Hamburger menu
+            if (e.target.classList.contains('hamburger-toggle')) {
+                e.target.children[0].classList.toggle('active');
+            }
+        })
+
+        document.onreadystatechange = function () {
+            let lastScrollPosition = 0;
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function (e) {
+                lastScrollPosition = window.scrollY;
+
+                if (lastScrollPosition > 100)
+                    navbar.classList.add('navbar-dark');
+                else
+                    navbar.classList.remove('navbar-dark');
+            });
+        }
+
+        document.addEventListener('click', function (e) {
+            // Hamburger menu
+            if (e.target.classList.contains('hamburger-toggle')) {
+                e.target.children[0].classList.toggle('active');
+            }
+        })
+
+        document.addEventListener("dropdown-menu", function () {
+            var dropdownMenus = document.querySelectorAll(".dropdown-menu");
+
+            dropdownMenus.forEach(function (menu) {
+                menu.addEventListener("mouseout", function (event) {
+                    // Close the dropdown menu and its parent
+                    var parentMenu = this.parentElement.querySelector(".dropdown-menu");
+                    if (parentMenu) {
+                        parentMenu.classList.remove("show");
+                    }
+                    this.classList.remove("show");
+                });
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const sliderWidth = slides.length * 200 + 'px';
+            const slideWidth = '200px';
+
+            document.querySelector('.slider').style.width = sliderWidth;
+
+            slides.forEach(slide => {
+                slide.style.width = slideWidth;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarContent = document.getElementById('navbar-content');
+
+            // Function to collapse the navbar
+            const collapseNavbar = () => {
+                const bsCollapse = new bootstrap.Collapse(navbarContent, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            };
+
+            // Close navbar on click outside or scroll
+            document.addEventListener('click', (event) => {
+                if (!navbarContent.contains(event.target) && !event.target.matches('.navbar-toggler')) {
+                    collapseNavbar();
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                collapseNavbar();
+            });
+        });
+
+
+        document.getElementById('chatbotIcon').addEventListener('click', function () {
+            var container = document.getElementById('chatbotContainer');
+            var inputArea = document.getElementById('chatbotInput');
+
+            if (container.style.display === 'flex') {
+                container.style.display = 'none';
+                inputArea.style.display = 'none';
+                clearChat();
+            } else {
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column'; // important for flex children layout
+                startChat();
+            }
+        });
+
+        // Add message to chatbot
+        function addMessage(sender, text) {
+            var messages = document.getElementById('chatbotMessages');
+            var messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+
+            var textDiv = document.createElement('div');
+            textDiv.classList.add('text');
+            textDiv.innerText = text;
+
+            messageDiv.appendChild(textDiv);
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // Clear messages & reset input
+        function clearChat() {
+            var messages = document.getElementById('chatbotMessages');
+            messages.innerHTML = '';
+            document.getElementById('serviceSelect').value = "";
+        }
+
+        // Start chatbot conversation
+        function startChat() {
+            clearChat();
+            addMessage('bot', "Welcome, My Name is Chillbot.");
+            setTimeout(function () {
+                addMessage('bot', "How may I help you today?");
+                document.getElementById('chatbotInput').style.display = 'flex'; // Show input after welcome
+            }, 1500);
+        }
+
+        // Handle send inquiry button click
+        document.getElementById('sendInquiry').addEventListener('click', function () {
+            var service = document.getElementById('serviceSelect').value;
+            if (!service) {
+                alert('Please select a service');
+                return;
+            }
+            addMessage('user', "I'm interested in " + service);
+            addMessage('bot', "Thank you for choosing " + service + ". Redirecting you to WhatsApp...");
+
+            setTimeout(function () {
+                var message = "Hello, I would like to know more about " + service + ".";
+                var phoneNumber = "918141848212";
+                var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+                window.open(url, '_blank');
+            }, 3000);
+        });
+
+
+    </script>
+</body>
+
+</html>
